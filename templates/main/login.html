@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Войти в...</title>
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+	<div id="signin-wrap" class="shell">
+		<div id="signin-title">Введите логин и пароль</div>
+		<div id="notice">%notice%</div>
+		<form method="POST">
+			<div class="form-group">
+				<label class="form-label" >Логин</label>
+				<input class="form-text" type="text" name="name" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label class="form-label" >Пароль</label>
+				<input class="form-text" type="password" name="pass" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-lg" type="submit" name="sbtn" value="Войти">
+			</div>
+		</form>
+		<div id="link"><a href="/user/register">Зарегистрироваться</a></div>
+	</div>
+</body>
+</html>

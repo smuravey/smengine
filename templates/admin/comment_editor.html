@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Редактор</title>
+	<link rel="stylesheet" href="/style/styleAdmin.css">
+</head>
+<body>
+	<div id="container">
+		<div class="menu shell">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="/admin/new">Новая статья</a></li>
+				<li><a href="/admin/list/a">Статьи</a></li>
+				<li><a href="/admin/list/c">Комментарии</a></li>
+				<li><a href="/admin/list/u">Пользователи</a></li>
+				<li style="float:right;">%ulink%</li>
+			</ul>
+		</div>
+		<div class="shell">
+			<form>
+				<div class="col-form">
+					<label>Пользователь</label><div class="form-text"><a href="/admin/edit/u/%name%">%name%</a></div>
+				</div>
+				<div class="col-form">
+					<label>Отправлено</label><div class="form-text">%date%</div>
+				</div>
+				<div class="col-form">
+					<label>Статус</label>
+					<select class="form-control" name="status">
+						<option value="0">Не проверено</option>
+						<option value="1">Проверено</option>
+						<option value="2">Мусор</option>
+					</select>
+				</div>
+				<div class="col-form">
+					<label>Комментарий</label>
+					<textarea id="text-field" class="form-control" name="message" required>%message%</textarea>
+				</div>
+				<div class="shell-footer">
+					<input class="btn" type="submit" value="Сохранить" formaction="/admin/send" formmethod="POST">
+					<input type="hidden" name="id" value="%id%">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		var ta = document.getElementsByTagName('textarea');
+
+		for (var i = 0; i < ta.length; i++) {
+			ta[i].setAttribute('style', 'height:' + (ta[i].scrollHeight) + 'px;overflow-y:hidden;');
+			ta[i].addEventListener("input", onInput, false);
+		}
+
+		function onInput() {
+			this.style.height = 'auto';
+			this.style.height = (this.scrollHeight) + 'px';
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Список статей</title>
+	<link rel="stylesheet" href="/style/styleAdmin.css">
+</head>
+<body>
+	<div id="container">
+		<div class="menu shell">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="/admin/new">Новая статья</a></li>
+				<li><a href="/admin/list/a">Статьи</a></li>
+				<li><a href="/admin/list/c">Комментарии</a></li>
+				<li><a href="/admin/list/u">Пользователи</a></li>
+				<li style="float:right;">%ulink%</li>
+			</ul>
+		</div>
+		<div class="menu shell">
+			<ul>
+				<li><a href="/admin/list/a/0">Черновики</a></li>
+				<li><a href="/admin/list/a/1">На главной</a></li>
+				<li><a href="/admin/list/a/2">Пункт меню</a></li>
+			</ul>
+		</div>
+		<div id="list-wrap" class="shell">
+			<div>
+				<table>
+					<tr><th>Заголовок</th><th>Дата публикации</th></tr>
+					%list%
+				</table>
+				<div id="nav">
+					<a href="?offset=%prev%"><span id="prev">«</span></a><a href="?offset=%next%"><span id="next">»</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

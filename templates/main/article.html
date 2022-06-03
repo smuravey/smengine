@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>%title%</title>
+	<meta name="description" content="Coming soon...">
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="head-panel" class="shell">
+			<div id="logo">
+				<a href="/"><img src="/img/logo.png"></a>
+			</div>
+			<div id="menu">
+				<ul>
+					<li>%ulink%</li>
+				</ul>
+			</div>
+		</div>
+		<div class="shell">
+			<div id="article-title">
+				<h1>%title%</h1>
+			</div>
+			<div id="article-text">%article%</div>
+			<div id="comments">
+				%commentslist%
+			</div>
+			<div id="c-send-wrap" data-cform="%comments%">
+				<form action="/article/cmntadd" method="POST">
+					<textarea id="mytextarea" class="form-text" name="message"></textarea>
+					<input id="aid" type="hidden" name="aid" value="%id%">
+					<input id="cid" type="hidden" name="cid">
+					<div class="form-group">
+						<input class="btn" type="submit" name="sbtn" value="Отправить комментарий">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		var cmnt  = document.getElementsByClassName('reply');
+		for (var i = 0; i < cmnt.length; i++){
+			cmnt[i].onclick = function(){
+				document.getElementById('cid').value = this.id;
+			};
+		}
+
+		var ta = document.getElementsByTagName('textarea');
+
+		for (var i = 0; i < ta.length; i++){
+			ta[i].setAttribute('style', 'height:' + (ta[i].scrollHeight) + 'px;overflow-y:hidden;');
+			ta[i].addEventListener("input", onInput, false);
+		}
+
+		function onInput() {
+			this.style.height = 'auto';
+			this.style.height = (this.scrollHeight) + 'px';
+		}
+
+	</script>
+</body>
+</html>

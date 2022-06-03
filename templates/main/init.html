@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Инициализация базы данных</title>
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+	<div class="shell" id="init-wrap">
+		<form method="POST">
+			<div class="col">
+				<div id="notice">%notice%</div>
+				<div id="signin-title">База данных</div>
+				<div class="form-group">
+					<label class="form-label">Имя базы данных</label>
+					<input class="form-text" type="text" name="dbname" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Имя пользователя</label>
+					<input class="form-text" type="text" name="dbuser" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Пароль</label>
+					<input class="form-text" type="password" name="dbpass" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Подтвердить пароль</label>
+					<input class="form-text" type="password" name="dbpass_confirm" autocomplete="off">
+				</div>
+			</div>
+			<div class="col">
+				<div id="signin-title">Учётная запись админа</div>
+				<div class="form-group">
+					<label class="form-label">Имя</label>
+					<input class="form-text" type="text" name="user" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label class="form-label">E-mail</label>
+					<input class="form-text" type="email" name="email">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Пароль</label>
+					<input class="form-text" type="password" name="pass" autocomplete="off">
+				</div>
+				<div class="form-group">
+					<label class="form-label">Подтвердить пароль</label>
+					<input class="form-text" type="password" name="pass_confirm" autocomplete="off">
+				</div>
+			</div>
+			<div class="form-group">
+				<input class="btn btn-lg" type="submit" name="sbtn" value="Старт">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

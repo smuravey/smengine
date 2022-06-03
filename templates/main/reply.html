@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ответ</title>
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="head-panel" class="shell">
+			<div id="logo">
+				<a href="/"><img src="/img/logo.png"></a>
+			</div>
+			<div id="menu">
+				<ul>
+					<li>%ulink%</li>
+				</ul>
+			</div>
+		</div>
+		<div id="c-reply" class="shell">
+			<blockquote>
+				<p>%message%</p>
+				<div class="comment-author">%name%</div>
+			</blockquote>
+			<div>
+				<form action="/comment/add" method="POST">
+					<div class="form-group">
+						<textarea class="form-text" name="message"></textarea>
+						<input type="hidden" name="aid" value="%aid%">
+						<input type="hidden" name="cid" value="%cid%">
+					</div>
+					<div class="form-group">
+						<input class="btn" type="submit" name="sbtn" value="Ответить на комментарий">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

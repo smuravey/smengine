@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Пользователь %name%</title>
+	<link rel="stylesheet" href="/style/styleAdmin.css">
+</head>
+<body>
+	<div id="container">
+		<div class="menu shell">
+			<ul>
+				<li><a href="/">Главная</a></li>
+				<li><a href="/admin/new">Новая статья</a></li>
+				<li><a href="/admin/list/a">Статьи</a></li>
+				<li><a href="/admin/list/c">Комментарии</a></li>
+				<li><a href="/admin/list/u">Пользователи</a></li>
+				<li style="float:right;">%ulink%</li>
+			</ul>
+		</div>
+		<div class="shell">
+			<div class="col-form"><label>Пользователь</label><div class="form-text">%name%</div></div>
+			<div class="col-form"><label>Email</label><div class="form-text">%email%</div></div>
+			<div class="col-form"><label>Статус</label><div class="form-text">%role%</div></div>
+			<div class="col-form"><label>Зарегистрирован</label><div class="form-text">%regdate%</div></div>
+			<div class="col-form"><label>Активность</label><div class="form-text">%visit%</div></div>
+			<form action="/admin/send" method="POST">
+				<div class="col-form">
+					<label>Роль</label>
+					<select class="form-control" name="status">
+						<option value="0">Пользователь</option>
+						<option value="1">Админ</option>
+					</select>
+				</div>
+				<div class="shell-footer">
+					<input type="hidden" name="id" value="%id%">
+					<input class="btn" type="submit" value="Изменить">
+				</div>
+			</form>
+		</div>		
+	</div>
+</body>
+</html>
